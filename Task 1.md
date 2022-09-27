@@ -33,6 +33,8 @@ To check if the IP has been created
 sudo id user
 
 sudo id javed
+  
+cat /etc/passwd | grep javed
 
 exit
 
