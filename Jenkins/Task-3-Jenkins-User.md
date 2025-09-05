@@ -5,7 +5,7 @@ Jenkins User
 
 ----
 
-```
+
 The Nautilus team is integrating Jenkins into their CI/CD pipelines. After setting up a new Jenkins server, they're now configuring user access for the development team, Follow these steps:
 
 
@@ -43,6 +43,7 @@ select Restart Jenkins when installation is complete and no jobs are running on 
 
 
 3. Capture screenshots of your configuration for review purposes. Consider using screen recording software like loom.com for documentation and sharing.
-```
+
+
 
 ## Solution
