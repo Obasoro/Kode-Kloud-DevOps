@@ -12,7 +12,45 @@
 
 - Key pair type must be rsa.
 
-## Solution
+## Solutions
+
+### Using aws cli
 
 
 ```aws ec2 create-key-pair --key-name devops-kp --key-type rsa --query 'KeyMaterial' --output text > devops-kp.pem```
+
+### Using terraform
+
+```
+resource "tls_private_key" "devops_kp" {
+
+  algorithm = "RSA"
+
+  rsa_bits  = 4096
+
+}
+
+resource "local_file" "private_key" {
+
+  content  = tls_private_key.devops_kp.private_key_pem
+
+  filename = "/home/bob/devops-kp.pem"
+
+  file_permission = "0600"
+
+}
+
+
+
+resource "aws_key_pair" "devops_kp" {
+
+  key_name   = "devops-kp"
+
+  public_key = tls_private_key.datacenter_kp.public_key_openssh
+
+
+}
+```
+
+
+
