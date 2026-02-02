@@ -19,6 +19,7 @@ For this task, create one subnet named xfusion-subnet under default VPC.
 aws ec2 describe-vpcs --filters "Name=isDefault,Values=true" --query "Vpcs[0].VpcId" --output text
 
 ```
+```
 aws ec2 describe-vpcs --filters "Name=isDefault,Values=true" --query "Vpcs[0].CidrBlock" --output text
 
 ```
