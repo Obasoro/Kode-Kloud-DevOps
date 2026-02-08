@@ -14,7 +14,8 @@ prompting them to decide to change the instance type. Please make sure the Statu
 ****
 
 - Retrieve the instance-ID
-  ```INSTANCE_ID=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=nautilus-ec2" --query "Reservations[].Instances[].InstanceId" --output text)
+```bash
+INSTANCE_ID=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=nautilus-ec2" --query "Reservations[].Instances[].InstanceId" --output text)
 echo "Instance ID: $INSTANCE_ID"
 
 ```
